@@ -1,0 +1,141 @@
+@font-face {
+  font-family: "DS-DIGIB";
+  src: url(./fonts/DS-DIGIB.TTF);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+body > :not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.lap-card {
+  display: flex;
+  align-items: center;
+}
+
+.lap-card > :not(:last-child) {
+  margin-right: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.timer {
+  font-family: "DS-DIGIB";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer.hideAndSeekAnimation {
+  animation-name: hideAndSeekAnimation;
+  animation-duration: 0.6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+  opacity: 1;
+}
+
+@keyframes hideAndSeekAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.timer > :not(:last-child) {
+  margin-right: 2rem;
+}
+
+.timer > span {
+  position: relative;
+  font-size: 5rem;
+  width: 1em;
+  display: flex;
+  font-weight: 950;
+  justify-content: center;
+}
+
+.timer > :not(:last-child)::before {
+  content: ":";
+  font-family: "DS-DIGIB";
+  position: absolute;
+  top: 50%;
+  left: 114%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.lap-hours,
+.lap-minutes,
+.lap-seconds,
+.lap-milliseconds {
+  font-family: "DS-DIGIB";
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons > :not(:last-child) {
+  margin-right: 1rem;
+}
+
+button {
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+  border-radius: 0.3rem;
+  border: none;
+  outline: none;
+  background-color: #7dd3fc;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0rem 0rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 500px) {
+  .timer > :not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  .timer > span {
+    font-size: 3rem;
+  }
+
+  .timer > :not(:last-child)::before {
+    left: 110%;
+    font-size: 2rem;
+  }
+
+  .buttons > :not(:last-child) {
+    margin-right: 0.4rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 0.6rem;
+  }
+}
